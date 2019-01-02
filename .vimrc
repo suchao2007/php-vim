@@ -15,6 +15,8 @@ Plugin 'terryma/vim-smooth-scroll'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'posva/vim-vue'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -57,6 +59,6 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-  autocmd FIletype vue set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  autocmd FIletype vue,javascript set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
   autocmd BufEnter * :syntax sync fromstart
 endif
